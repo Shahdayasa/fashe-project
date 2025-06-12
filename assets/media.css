@@ -1,0 +1,56 @@
+@media screen and (max-width: 1030px) {
+   .grid-container{
+        display: none !important;
+      
+    }
+}
+@media screen and (max-width: 784px) {
+ 
+}  
+@media screen and (max-width: 780px) {
+.container{
+    flex-direction: column !important;
+}
+.main{
+    width: 100% !important;
+}
+.dress-products{
+    justify-content: center;
+}
+.dress-card{
+    flex: 0 0 45% !important;
+    max-width: 45% !important;
+}
+} 
+@media screen and (max-width: 580px) {
+.container{
+    flex-direction: column !important;
+}
+.main{
+    width: 100% !important;
+}
+.part{
+    display: flex;
+    flex-direction: column;
+}
+.dress-products{
+    justify-content: center;
+}
+.dress-card{
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+}
+.dress-products{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.dress-img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+   
+}
+
+} 
+
