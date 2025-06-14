@@ -1,17 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Hand+Pre:wght@400..700&display=swap');
 :root{
     --black-color:#212529;
     --orange-color:#e65540;
     --grey-color:#666;
     --white-color: #fff;
-   
-    }
+--style:"Edu NSW ACT Hand Pre", cursive !important ;  }
     *{
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
     body{
-        font-family: Arial, Helvetica, sans-serif;
+        font-family:var(--style);
     color: var(--black-color);
         line-height: 1.6;
         font-weight: 400;
@@ -93,6 +93,7 @@ color: var(--white-color);
   height: 100vh;
   min-height: 600px;
   position: relative;
+  margin: 20px;
 }
 .carousel-item{
   min-height: 600px;
@@ -157,11 +158,11 @@ margin: bottom 10px; ;
 }
 .shop-now:hover{
     color: var(--white-color) !important;
-  background-color: var(--orange-color) !important;
+  background-color: #ecb8b0!important;
 }
 .card-title:hover{
   color: var(--white-color) !important;
-  background-color: var(--orange-color) !important;
+  background-color: #ecb8b0!important;
 }
 .categories-section{
   padding: 80px 0;
@@ -202,19 +203,46 @@ padding: 30px 20px 20px;
 color: white;
 }
 .get-in-touch{
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   background-color:#e1dfdf !important;
   color: #212529 !important;
 }
 
-.get-in-touch h5,.get-in-touch h4{
-  font-size: 20px;
-  margin-bottom: 15px;
-     color:var(--black-color);
+.get-in-touch h5{
+    font-size: 13px;
+   margin-bottom: 15px;
+   color:var(--black-color) !important;
+   transition: all 0.3s ease !important;
+   -webkit-transition: all 0.3s ease !important;
+   -moz-transition: all 0.3s ease !important;
+   -ms-transition: all 0.3s ease !important;
+   -o-transition: all 0.3s ease !important;
+}
+.get-in-touch h4{
+    font-size: 13px;
+   margin-bottom: 15px;
+   color:var(--black-color) !important;
+   transition: all 0.3s ease !important;
+   -webkit-transition: all 0.3s ease !important;
+   -moz-transition: all 0.3s ease !important;
+   -ms-transition: all 0.3s ease !important;
+   -o-transition: all 0.3s ease !important;
+}
+.get-in-touch h4:hover{
+          color: #ecb8b0 !important;
+               transform: translateY(5px);
+      -webkit-transform: translateY(5px);
+      -moz-transform: translateY(5px);
+      -ms-transform: translateY(5px);
+      -o-transform: translateY(5px);
+
+}
+.get-in-touch h5:hover{
+          color: #ecb8b0 !important;
 
 }
 .get-in-touch p{
     color:#545252 ;
+  font-size: 13px;
 
 }
 .get-in-touch ul li a{
@@ -234,6 +262,7 @@ color: white;
 
 .social-media-footer a
 {
+  font-size: 15px;
     background-color: #e1dfdf;
       color:#545252 !important;
 
@@ -255,7 +284,6 @@ color: white;
   border-radius: 25px;
  width: 100%;
  margin-bottom: 15px;
- font-size: 14px;
 }
 .NEWSLETTER:focus{
   outline: none;
@@ -270,11 +298,11 @@ color: white;
   -moz-border-radius: 30px;
   -ms-border-radius: 30px;
   -o-border-radius: 30px;
-  transition:background-color 0.3s ease ;
-  -webkit-transition:background-color 0.3s ease ;
-  -moz-transition:background-color 0.3s ease ;
-  -ms-transition:background-color 0.3s ease ;
-  -o-transition:background-color 0.3s ease ;
+  transition:all 0.3s ease ;
+  -webkit-transition:all 0.3s ease ;
+  -moz-transition:all 0.3s ease ;
+  -ms-transition:all 0.3s ease ;
+  -o-transition:all 0.3s ease ;
 }
 .subscribe:hover{
   background-color:#ecb8b0;
@@ -285,6 +313,11 @@ color: white;
   -moz-border-radius: 30px;
   -ms-border-radius: 30px;
   -o-border-radius: 30px;
+       transform: translateY(5px);
+      -webkit-transform: translateY(5px);
+      -moz-transform: translateY(5px);
+      -ms-transform: translateY(5px);
+      -o-transform: translateY(5px);
 }
 .products-hero{
    background-color: var(--dark-bg);
@@ -363,7 +396,7 @@ left: 0;
 
 }
 .parts h4:hover{
-   color: var(--orange-color);
+   color:#df998e!;
  
 }
 .parts{
@@ -462,7 +495,7 @@ padding: 15px 20px 5px 20px ;
 text-align: left;
 }
 .details  h5{
-  font-size: 15px;
+  font-size: 10px;
   margin-bottom: 0;
   color: var(--black-color) !important;
   font-weight: bold;
@@ -474,16 +507,23 @@ text-align: left;
   -o-transition: color 0.3s ease;
 }
 .details  h5:hover{
-  color: var(--orange-color) !important;
+  color: #df998e!important;
 }
 .grid-container {
    display: grid;
    grid-template-columns:repeat(3,1fr) ;
    gap: 10px;
-   background-color:hsl(35, 21%, 89%) !important;
+   background-color:#fff !important;
    padding: 8px 0 !important;
    font-size: 15px;
-   color: var(--grey-color) !important;
+   color: #c08278;
+}
+.Number{
+  font-size: 12px;
+}
+.grid-container button{
+     color: #c08278;
+
 }
 
 .grid-container > div {
@@ -509,4 +549,229 @@ text-align: left;
    -o-transition:color 0.3s ease ;
 }
 
+ .card{
+border-radius:12px ;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+background-color: white;
+padding: 16px;
+ }
+ .row{
+    display: flex;
+   flex-wrap: wrap;
 
+ }
+ .cards-container .col-md-6{
+    display: flex;
+    justify-content: center;
+ }
+ .card img{
+    width: 100%;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+    object-fit: cover;
+    padding: 8px;
+    margin-bottom: 15px;
+}
+
+.card p{
+    margin-top: 0;
+    margin-bottom: 12px;
+      transition: color 0.3s;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    -ms-transition: color 0.3s;
+    -o-transition: color 0.3s;
+
+}
+.card p:hover{
+color: rgb(82, 72, 54) !important;}
+a{
+color: rgb(82, 72, 54) !important;}
+.card.custom-card{
+    margin: 15px auto;
+    padding: 16px;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0, 0, 0.1);
+}
+.hero-section{
+    background-color: var(--dark-bg);
+    height: 100vh;
+    display: flex;
+    align-items: center !important;
+    justify-content: center !important;
+    background-image: url(images/shop1.jpeg);
+background-size:cover ;
+background-position: center !important;
+position: relative;
+}
+.hero-section::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+background: rgba(10, 14, 20,0.7);
+}
+.hero-section .container{
+    position: relative;
+    z-index: 1;
+}
+.hero-section h1{
+  transition: transform 0.3s ease;
+  -webkit-transition: transform 0.3s ease;
+  -moz-transition: transform 0.3s ease;
+  -ms-transition: transform 0.3s ease;
+  -o-transition: transform 0.3s ease;
+    font-size: 6rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+        color:white;
+   transition: color 0.3s;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    -ms-transition: color 0.3s;
+    -o-transition: color 0.3s;
+}
+.hero-section h1:hover{
+          color:rgb(151, 134, 101) !important;
+          transform: translateY(-3px);
+          -webkit-transform: translateY(-3px);
+          -moz-transform: translateY(-3px);
+          -ms-transform: translateY(-3px);
+          -o-transform: translateY(-3px);
+}
+.hero-title{
+      font-size: 3rem;
+    margin-bottom: 2rem;
+    color:white;
+       transition: color 0.3s;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    -ms-transition: color 0.3s;
+    -o-transition: color 0.3s;
+transition: transform 0.3s ease;
+  -webkit-transition: transform 0.3s ease;
+  -moz-transition: transform 0.3s ease;
+  -ms-transition: transform 0.3s ease;
+  -o-transition: transform 0.3s ease;}
+.hero-title:hover{
+        color:rgb(151, 134, 101) !important;;
+          transform: translateY(-3px);
+  -webkit-transform: translateY(-3px);
+  -moz-transform: translateY(-3px);
+  -ms-transform: translateY(-3px);
+  -o-transform: translateY(-3px);
+
+}
+.social-icons a{
+      color:#3e3e3e;
+    font-size: 1.4rem;
+    color: var(--light-color);
+    margin: 0 0.8rem;
+    transition: color 0.3s;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    -ms-transition: color 0.3s;
+    -o-transition: color 0.3s;
+}
+.col-12 .social-icons a{
+color: #fff !important ;}
+.social-icons a:hover{
+        color:rgb(82, 72, 54) !important;;
+
+}
+.larger{
+  transition: transform 0.3s ease;
+  -webkit-transition: transform 0.3s ease;
+  -moz-transition: transform 0.3s ease;
+  -ms-transition: transform 0.3s ease;
+  -o-transition: transform 0.3s ease;
+  height: 350px;
+
+}
+.larger:hover{
+  transform: translateY(-3px);
+  -webkit-transform: translateY(-3px);
+  -moz-transform: translateY(-3px);
+  -ms-transform: translateY(-3px);
+  -o-transform: translateY(-3px);
+}
+
+.about-section h2{
+        color:rgb(82, 72, 54) !important;;
+        font-size: 50px;
+          transition: transform 0.3s ease;
+  -webkit-transition: transform 0.3s ease;
+  -moz-transition: transform 0.3s ease;
+  -ms-transition: transform 0.3s ease;
+  -o-transition: transform 0.3s ease;
+}
+.about-section h2:hover{
+    transform: translateY(-3px);
+  -webkit-transform: translateY(-3px);
+  -moz-transform: translateY(-3px);
+  -ms-transform: translateY(-3px);
+  -o-transform: translateY(-3px);
+}
+.vedio-story {
+padding: 80px 0px;
+  background:#fff;
+position: relative;
+overflow: hidden;
+margin-bottom: 70px;
+line-height: 1.8;
+}
+.vedio-container video{
+  max-width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+  -webkit-transition: transform 0.3s ease;
+  -moz-transition: transform 0.3s ease;
+  -ms-transition: transform 0.3s ease;
+  -o-transition: transform 0.3s ease;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+.vedio-container video:hover{
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+.vedio-container{
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  margin-left: 20px;
+  position: relative;
+  padding: 40px;
+  border: 3px solid rgb(82, 72, 54);
+}
+.vedio-text{
+  transform: color 0.3s ease;
+  -webkit-transform: color 0.3s ease;
+  -moz-transform: color 0.3s ease;
+  -ms-transform: color 0.3s ease;
+  -o-transform: color 0.3s ease;
+}
+.vedio-text:hover{
+color:  rgb(127, 108, 71);
+ 
+}
