@@ -324,7 +324,7 @@ color: white;
     display: flex !important;
     align-items: center;
     justify-content: center;
-    background-image: url(images/bg-products.jpeg);
+    background-image: url(../images/bg-products.jpeg);
 background-size:cover ;
 background-position: center;
 position: relative;
@@ -608,7 +608,7 @@ color: rgb(82, 72, 54) !important;}
     display: flex;
     align-items: center !important;
     justify-content: center !important;
-    background-image: url(images/shop1.jpeg);
+    background-image: url(../images/shop1.jpeg);
 background-size:cover ;
 background-position: center !important;
 position: relative;
