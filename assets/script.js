@@ -1,7 +1,7 @@
 function updateCartIcon(){
 const cart=JSON.parse(localStorage.getItem('cart')) || [];
 const cartCount =cart.reduce((sum,item)=>sum + item.quantity, 0);
-const cartSpan=document.querySelector('#cart-count') || document.querySelector('.cart');
+const cartSpan=document.querySelector('.cart');
 if(cartSpan){
     cartSpan.textContent = cartCount;
 }
@@ -9,11 +9,11 @@ if(cartSpan){
 function loadCart(){
 const cart = JSON.parse(localStorage.getItem('cart')) || [];
 const cartContainer = document.getElementById('cart-items');
-const totalItemsEl = document.getElementById('total-items');
-const totalPriceEl = document.getElementById('total-price');
+const totalElements = document.getElementById('total-items');
+const totalPrices = document.getElementById('total-price');
 const emptyCart = document.getElementById('empty-cart'); 
-if(!cartContainer || !totalItemsEl || !totalPriceEl) return;
-cartContainer.innerHTML = '';
+if(!cartContainer || !totalElements || !totalPrices) return;
+cartContainer.innerHTML ='';
 let totalItems=0;
 let totalPrice=0;
 if (cart.length ==0 && emptyCart){
@@ -33,17 +33,18 @@ cartContainer.innerHTML += `
 <td>$${item.price.toFixed(2)}</td>
 <td>
 <div class="input-group">
-    <button class="btn btn-sm btn-outline-secondary  decrease" data-index="${index}">-</button>
+    <button class="btn btn-sm btn-outline-secondary  less" data-index="${index}">-</button>
     <input type="number" class="form-control text-center quantity" data-index="${index}" value="${item.quantity}" min="1">
-<button class="btn btn-sm btn-outline-secondary  increase" data-index="${index}">+</button>
+<button class="btn btn-sm btn-outline-secondary  more" data-index="${index}">+</button>
 </div>
 </td>
 <td>$${itemTotal.toFixed(2)}</td>
+<td><button class="btn btn-sm btn-outline-secondary  remove " data-index="${index}">Remove</button></td>
 </tr>
 `;
 });
-totalItemsEl.textContent=totalItems;
-totalPriceEl.textContent=totalPrice.toFixed(2);
+totalElements.textContent=totalItems;
+totalPrices.textContent=totalPrice.toFixed(2);
 }
 document.addEventListener('DOMContentLoaded',() => {
     const addToCartButtons=document.querySelectorAll('.add-to-cart');
@@ -79,7 +80,7 @@ document.addEventListener('DOMContentLoaded',() => {
 
 document.addEventListener('click' , function(e) {
 const cart = JSON.parse(localStorage.getItem('cart')) || [];
-if (e.target.classList.contains('decrease')){
+if (e.target.classList.contains('less')){
     const index = parseInt(e.target.dataset.index);
     if(cart[index].quantity > 1){
       cart[index].quantity -=1;
@@ -88,13 +89,22 @@ localStorage.setItem('cart' , JSON.stringify(cart));
 loadCart();
 updateCartIcon();
 }
-if (e.target.classList.contains('increase')){
+if (e.target.classList.contains('more')){
      const index = parseInt(e.target.dataset.index);
       cart[index].quantity +=1;
  localStorage.setItem('cart' , JSON.stringify(cart));
 loadCart();
 updateCartIcon();
 }
+ if (e.target.classList.contains('remove')){
+     const index = parseInt(e.target.dataset.index);
+      cart.splice(index,1)
+ localStorage.setItem('cart' , JSON.stringify(cart));
+loadCart();
+updateCartIcon();
+}
+
+
 if(e.target.id === 'clear-cart'){
     localStorage.removeItem('cart');
     loadCart();

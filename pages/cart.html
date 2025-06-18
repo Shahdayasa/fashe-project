@@ -9,7 +9,11 @@
 <link rel="stylesheet" href="../assets/css/styles.css">
 <link rel="stylesheet" href="../assets/css/media.css">
 <style>
-   
+   .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   }
 </style>
 </head>
 <body>
@@ -24,29 +28,27 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       <li class="nav-item">
-          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="../index.html">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#section-categories">Shop</a>
-        </li>
+     
           <li class="nav-item">
-          <a class="nav-link" href="pages/products/all-featured.html">Feateued</a>
+          <a class="nav-link" href="pages/products/all-featured.html">Featured</a>
         </li>  <li class="nav-item">
-          <a class="nav-link" href="pages/about.html">About</a>
+          <a class="nav-link" href="./about.html">About</a>
         </li>
       </ul>
          <div class="navbar-icons">
-       <div class="icon position-relative">
-           <i class="fa-solid fa-cart-shopping icon" id="shopping-cart"></i>
-      <span class="cart">0</span>
+     <div class="icon position-relative">
+         <a href="cart.html"><i class="fa-solid fa-cart-shopping icon" id="shopping-cart"></i>
+      <span class="cart">0</span></a> 
        </div>
      
     </div>
   </div>
   
 </nav>
-<div class="container mt-5 mb-5">
-  <div class="row">
+<div class="container">
+  <div class="row justify-content-center">
     <div class="col-12">
       <h2 class="mb-4 text-center">
 Shopping Cart
@@ -72,7 +74,7 @@ Shopping Cart
         <a href="../pages/products/dresses.html" class="btn btn-secondary">Continue Shopping</a>
         </div>
         <div class="col-md-6 text-end">
-          <div class="cart-summary">
+          <div class="cart-elements">
             <h4>Total Items: <span id="total-items" class="text-secondary">0</span></h4>
             <h4>Total Price: $<span id="total-price" class="text-success">0-00</span></h4>
           <a href="../pages/checkout.html" class="btn btn-success btn-lg mt-3" id="checkout-btn">Checkout</a>
@@ -90,11 +92,6 @@ Shopping Cart
   </div>
 </div>
 </div>
-<div class="notification" id="notification">
-    Cart Updated Successfully
-</div>
-    
-
 <footer class="get-in-touch py-5">
     <div class="container">
 <div class="row gy-4">
