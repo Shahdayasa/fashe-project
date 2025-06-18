@@ -509,7 +509,7 @@ text-align: left;
 .details  h5:hover{
   color: #df998e!important;
 }
-.grid-container {
+.first-bar {
    display: grid;
    grid-template-columns:repeat(3,1fr) ;
    gap: 10px;
@@ -521,12 +521,8 @@ text-align: left;
 .Number{
   font-size: 12px;
 }
-.grid-container button{
-     color: #c08278;
 
-}
-
-.grid-container > div {
+.first-bar > div {
   text-align: center;
   padding: 10px;
   font-size: 15px;
@@ -534,14 +530,19 @@ text-align: left;
 
 }
 
-.social-media a{
+.first-bar .col1 .social-media a{
   color: var(--dark-bg);
+
+}
+.first-bar .col1 .social-media a:hover{
+  color: #ecb8b0 !important;
+;
 
 }
 .social-media{
   padding-top: 25px;
 }
-.item1,.item2,.item3{
+.col1,.col2,.col3{
      transition:color 0.3s ease ;
    -webkit-transition:color 0.3s ease ;
    -moz-transition:color 0.3s ease ;
