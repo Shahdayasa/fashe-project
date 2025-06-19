@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded',() => {
                     setTimeout (() =>  (notification.style.display = 'none') ,2000);
                 
                 } else{
-                    alert('Added to cart successfully')
+                    alert('Added to cart successfully!')
                 }
             });
         });
@@ -114,10 +114,10 @@ if(e.target.id === 'clear-cart'){
 document.addEventListener('input',function(e){
     if(e.target.classList.contains('quantity')){
         const index = parseInt(e.target.dataset.index);
-    let  newQty = parseInt(e.target.value);
-    if(isNaN(newQty) || newQty < 1) newQty = 1;
+    let  new_quantity = parseInt(e.target.value);
+    if(isNaN(new_quantity) || new_quantity < 1) new_quantity = 1;
     const cart=JSON.parse(localStorage.getItem('cart')) || [];
-    cart[index].quantity = newQty;
+    cart[index].quantity = new_quantity;
     localStorage.setItem('cart',JSON.stringify(cart))
     loadCart();
          updateCartIcon();
