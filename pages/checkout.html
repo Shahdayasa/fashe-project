@@ -181,7 +181,7 @@
     <span>Subtotal:</span><span id="subtotal">$0.00</span>
 </div>
 <div class="d-flex justify-content-between mb-2">
-    <span>Shipping:</span><span id="Shipping">$5.00</span>
+    <span>Shipping:</span><span id="shipping">$5.00</span>
 </div><div class="d-flex justify-content-between mb-2">
     <span>Tax:</span><span id="tax">$0.00</span>
 </div>
@@ -260,19 +260,21 @@ function loadCheckoutItems(){
     const taxEl = document.getElementById('tax');
     const finalTotalEl = document.getElementById('final-total');
     if(!checkoutContainer) return;
+
     let subtotal=0;
     const shipping=5.00;
 
-    checkoutContainer.innerHTML = cart.length === 0 ?
-  '<p class="text-muted"> No items in your cart </p>':'';
-  cart.forEach(item => {
+    checkoutContainer.innerHTML = cart.length === 0 
+    ?'<p class="text-muted"> No items in your cart </p>':'';
+ let itemsHTML = '';
+    cart.forEach(item => {
     const itemTotal = item.price * item.quantity;
     subtotal += itemTotal;
-    checkoutContainer.innerHTMLn += `
+  itemsHTML += `
     <div class="order-item">
         <div class="d-flex align-items-center">
             <img src="${item.image}" width="50" height="50" class="me-3 rounded">
- <div class="flex=grow-1">
+ <div class="flex-grow-1">
     <h6 class="mb-1">${item.name} </h6>
     <small class="text-muted">Qty: ${item.quantity}</small>
     </div>
@@ -282,6 +284,7 @@ function loadCheckoutItems(){
         </div>
         </div>`
   });
+  checkoutContainer.innerHTML=itemsHTML;
 const tax=subtotal * 0.08;
 const finalTotal= subtotal + shipping + tax;
 subtotalEl.textContent= `$${subtotal.toFixed(2)}`;
@@ -290,6 +293,18 @@ taxEl.textContent = `$${tax.toFixed(2)}`;
 finalTotalEl.textContent = `$${finalTotal.toFixed(2)}`;
 }
 document.addEventListener('DOMContentLoaded', function() {
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const emailInput=document.getElementById('email')
+emailInput.addEventListener('change' ,()=>{
+    const emailvalue = emailInput.value.trim();
+if (emailPattern.test(emailvalue)){
+    emailInput.classList.remove('is-invalid')
+    emailInput.classList.add('is-valid')
+} else{
+        emailInput.classList.add('is-invalid')
+    emailInput.classList.remove('is-valid')
+}
+});
 document.getElementById('place-order').addEventListener('click',function (){
 const form=document.getElementById('checkout-form');
 if(!form.checkValidity()){
