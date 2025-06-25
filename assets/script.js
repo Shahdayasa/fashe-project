@@ -62,14 +62,9 @@ document.addEventListener('DOMContentLoaded',() => {
                 }
                 localStorage.setItem('cart', JSON.stringify(cart));
                 updateCartIcon();
-                const notification = document.getElementById('cart-notification');
-                if(notification){
-                    notification.style.display='block';
-                    setTimeout (() =>  (notification.style.display = 'none') ,2000);
-                
-                } else{
+        
                     alert('Added to cart successfully!')
-                }
+                
             });
         });
         
@@ -102,6 +97,9 @@ updateCartIcon();
  localStorage.setItem('cart' , JSON.stringify(cart));
 loadCart();
 updateCartIcon();
+ 
+  alert('Added to cart successfully!')
+               
 }
 
 

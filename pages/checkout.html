@@ -8,13 +8,16 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/styles.css">
 <link rel="stylesheet" href="../assets/css/media.css">
-</head>
+
 <style>
     .checkout-section{
         background-color: #f8f9fa;
         border-radius: 10px;
         padding: 2rem;
         margin-bottom: 2rem;
+    }
+    .submit-order button{
+      margin: auto;
     }
     .order {
         background-color: #fff;
@@ -80,7 +83,7 @@
             justify-content: center;
             font-size: 12px;
         }
-</style>
+</style></head>
 <body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
@@ -108,8 +111,6 @@
      
     </div>
   </div>
-  
-</nav>
   </nav>
   <div class="container mt-5 mb-5">
     <div class="row">
@@ -174,30 +175,26 @@
     <div class="order">
 <div id="checkout-items"></div>
 <div class="d-flex justify-content-between mb-2">
-    <span>Subtotal:</span><span id="subtotal">$0.00</span>
+    <span>Items Cost:</span><span id="items-cost">$0.00</span>
 </div>
 <div class="d-flex justify-content-between mb-2">
     <span>Shipping:</span><span id="shipping">$5.00</span>
-</div><div class="d-flex justify-content-between mb-2">
-    <span>Tax:</span><span id="tax">$0.00</span>
 </div>
 
   <div class="d-flex justify-content-between mb-4">
-    <strong>Total:</strong><strong id="final-total">$0.00</strong>
+    <span>Total Cost:</span><span id="totalcost">$0.00</span>
 </div>  
-<button type="button" class="btn btn-success w-100 mb-3" id="place-order">
-    <i class="fa-solid fa-lock me-2"></i> Place Order
+
+<div class="submit-order">
+ <button type="button" class="btn btn-success w-100 mb-3" id="submit-order">
+    <i class="fa-solid fa-lock me-2"></i> Submit Order
 </button>
-<div class="text-center">
-    <small class="text-muted">
-        <i class="fa-solid fa-truck me-1"></i> shipping rate: $5
-    </small>
 </div>
 </div>
 </div>
   </div>
   </div>
-<div class="notification" id="notification">Order placed Successfully!</div>
+<div class="notification" id="notification">Order sent successfully. We will contact you soon to deliver your order!</div>
 
 <footer class="get-in-touch py-5">
     <div class="container">
@@ -242,51 +239,43 @@ GET IN TOUCH
 
 
     </footer>
+      <script src="/assets/script.js"></script>
+
 <script>
-function updateCartIcon(){
-const cart=JSON.parse(localStorage.getItem('cart')) || [];
-const cartCount =cart.reduce((sum,item)=>sum + item.quantity, 0);
-document.querySelector('.cart').textContent = cartCount;
-}
-function loadCheckoutItems(){
+
+function UpdateCheckoutItems(){
     const cart =JSON.parse(localStorage.getItem('cart')) || [];
     const checkoutContainer = document.getElementById('checkout-items');
-    const subtotalEl = document.getElementById('subtotal');
-    const shippingEl = document.getElementById('shipping');
-    const taxEl = document.getElementById('tax');
-    const finalTotalEl = document.getElementById('final-total');
+    const itemscostID = document.getElementById('items-cost');
+    const shippingID = document.getElementById('shipping');
+    const finalTotalID = document.getElementById('totalcost');
     if(!checkoutContainer) return;
 
-    let subtotal=0;
+    let itemscost=0;
     const shipping=5.00;
 
-    checkoutContainer.innerHTML = cart.length === 0 
-    ?'<p class="text-muted"> No items in your cart </p>':'';
- let itemsHTML = '';
+ let CartitemsHTML = '';
     cart.forEach(item => {
     const itemTotal = item.price * item.quantity;
-    subtotal += itemTotal;
-  itemsHTML += `
+    itemscost += itemTotal;
+  CartitemsHTML += `
     <div class="order-item">
         <div class="d-flex align-items-center">
             <img src="${item.image}" width="50" height="50" class="me-3 rounded">
  <div class="flex-grow-1">
     <h6 class="mb-1">${item.name} </h6>
-    <small class="text-muted">Qty: ${item.quantity}</small>
     </div>
     <div class="text-end">
-        <strong>$${itemTotal.toFixed(2)} </strong>
+        <span>$${itemTotal.toFixed(2)} </span>
         </div>
         </div>
         </div>`
   });
-  checkoutContainer.innerHTML=itemsHTML;
-const tax=subtotal * 0.08;
-const finalTotal= subtotal + shipping + tax;
-subtotalEl.textContent= `$${subtotal.toFixed(2)}`;
-shippingEl.textContent= `$${shipping.toFixed(2)}`;
-taxEl.textContent = `$${tax.toFixed(2)}`;
-finalTotalEl.textContent = `$${finalTotal.toFixed(2)}`;
+  checkoutContainer.innerHTML=CartitemsHTML;
+const finalTotal= itemscost + shipping ;
+itemscostID.textContent= `$${itemscost.toFixed(2)}`;
+shippingID.textContent= `$${shipping.toFixed(2)}`;
+finalTotalID.textContent = `$${finalTotal.toFixed(2)}`;
 }
 document.addEventListener('DOMContentLoaded', function() {
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -298,10 +287,10 @@ if (emailPattern.test(emailvalue)){
     emailInput.classList.add('is-valid')
 } else{
         emailInput.classList.add('is-invalid')
-    emailInput.classList.remove('is-valid')
-}
+    emailInput.classList.remove('is-valid')}
 });
-document.getElementById('place-order').addEventListener('click',function (){
+});
+document.getElementById('submit-order').addEventListener('click',function (){
 const form=document.getElementById('checkout-form');
 if(!form.checkValidity()){
     form.reportValidity();
@@ -309,22 +298,20 @@ if(!form.checkValidity()){
 }  
 this.disabled=true;
 this.innerHTML=
-'<i class="fa-solid fa-spinner fa-spin me-2"></i> Processing...';
+' submitting<i class="fa-solid fa-spinner fa-spin ms-3"></i> ';
+const notification =document.getElementById('notification');
+notification.style.display='block'
 setTimeout(()=>{
-    localStorage.removeItem('cart');
-    const notification = document.getElementById('notification');
-    notification.style.display='block';
-    setTimeout(()=>(notification.style.display='none'),3000);
-    setTimeout (() =>{
-        alert('Order sent successfully. We will contact you soon to deliver your order.');
-
+notification.style.display='none';
+localStorage.removeItem('cart')
     window.location.href='../index.html'
+
 },2000);
-},2000);
+
+
+
 });
-loadCheckoutItems();
-updateCartIcon();
-});
+
 </script>
 </body>
 </html>
