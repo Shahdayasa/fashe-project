@@ -273,10 +273,10 @@ background-size:cover ;
 background-position: center;
 position: relative;
     min-height: 239px;
-    padding-left: 15px;
-    padding-right: 15px;
+ padding: 0 15px;
     background-repeat: no-repeat;
     text-align: center;
+    overflow: hidden;
 }
 .products-hero h1{
     font-size: 70px;

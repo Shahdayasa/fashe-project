@@ -38,7 +38,6 @@
             border-color: #ecb8b0 ;
         }
         .checkout-header{
-            border-bottom: 2px solid  #ecb8b0 ;
             padding-bottom: 1rem;
             margin-bottom: 2rem;
         }
@@ -186,7 +185,7 @@
 </div>  
 
 <div class="submit-order">
- <button type="button" class="btn btn-success w-100 mb-3" id="submit-order">
+ <button type="button" class="btn btn-secondary w-100 mb-3" id="submit-order">
     <i class="fa-solid fa-lock me-2"></i> Submit Order
 </button>
 </div>
@@ -239,7 +238,7 @@ GET IN TOUCH
 
 
     </footer>
-      <script src="/assets/script.js"></script>
+    <script src="/assets/script.js"></script> 
 
 <script>
 
@@ -278,6 +277,7 @@ shippingID.textContent= `$${shipping.toFixed(2)}`;
 finalTotalID.textContent = `$${finalTotal.toFixed(2)}`;
 }
 document.addEventListener('DOMContentLoaded', function() {
+  UpdateCheckoutItems();
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const emailInput=document.getElementById('email')
 emailInput.addEventListener('change' ,()=>{
