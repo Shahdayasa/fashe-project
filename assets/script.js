@@ -98,7 +98,7 @@ updateCartIcon();
 loadCart();
 updateCartIcon();
  
-  alert('Added to cart successfully!')
+  alert('Removed from  cart successfully!')
                
 }
 
