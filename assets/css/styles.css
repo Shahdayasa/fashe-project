@@ -720,3 +720,7 @@ line-height: 1.8;
 color:  rgb(127, 108, 71);
  
 }
+.table-responsive{
+  background-color: #e1dfdf !important;
+  padding: 15px !important;
+}
