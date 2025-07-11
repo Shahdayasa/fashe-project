@@ -255,7 +255,7 @@ color: white;
 
 }
 .get-in-touch ul li a{
-    color:#545252 !important;
+    color:black !important;
     font-size: 14px;
     text-decoration: none;
     background-color: #e1dfdf !important;
@@ -269,14 +269,13 @@ color: white;
       color: #ecb8b0 !important;
 }
 
-.social-media-footer a
+.get-in-touch .social-icons a
 {
   font-size: 15px;
-    background-color: #e1dfdf;
-      color:#545252 !important;
+      color:black!important;
 
 }
-.social-media-footer a:hover{
+.get-in-touch .social-icons a:hover{
         color: #ecb8b0 !important;
 
 }
@@ -614,7 +613,7 @@ background: rgba(10, 14, 20,0.7);
     -o-transition: color 0.3s;
 }
 .hero-section h1:hover{
-          color:rgb(151, 134, 101) !important;
+ color: #eec395ac !important;
           transform: translateY(-3px);
           -webkit-transform: translateY(-3px);
           -moz-transform: translateY(-3px);
@@ -636,7 +635,7 @@ transition: transform 0.3s ease;
   -ms-transition: transform 0.3s ease;
   -o-transition: transform 0.3s ease;}
 .hero-title:hover{
-        color:rgb(151, 134, 101) !important;;
+ color: #eec395ac !important;
           transform: translateY(-3px);
   -webkit-transform: translateY(-3px);
   -moz-transform: translateY(-3px);
@@ -645,7 +644,7 @@ transition: transform 0.3s ease;
 
 }
 .social-icons a{
-    color:#3e3e3e;
+ color: white !important;
     font-size: 1.4rem;
     color: var(--light-color);
     margin: 0 0.8rem;
@@ -657,7 +656,7 @@ transition: transform 0.3s ease;
 }
 .social-icons a {
   font-size: 18px;
-  color: #545252;
+  color: white;
   transition: color 0.3s ease;
     transition: transform 0.3s ease;
   -webkit-transition: transform 0.3s ease;
@@ -668,21 +667,25 @@ transition: transform 0.3s ease;
 
 
 .social-icons a:hover {
-  color: #ecb8b0 !important;
+  color: #eec395ac !important;
     transform: translateY(-3px);
   -webkit-transform: translateY(-3px);
   -moz-transform: translateY(-3px);
   -ms-transform: translateY(-3px);
   -o-transform: translateY(-3px);
 }
-.larger{
+.vedio-container .larger{
   transition: transform 0.3s ease;
   -webkit-transition: transform 0.3s ease;
   -moz-transition: transform 0.3s ease;
   -ms-transition: transform 0.3s ease;
   -o-transition: transform 0.3s ease;
   height: 350px;
-
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
 }
 .larger:hover{
   transform: translateY(-3px);
@@ -692,29 +695,13 @@ transition: transform 0.3s ease;
   -o-transform: translateY(-3px);
 }
 
-.about-section h2{
-        color:rgb(82, 72, 54) !important;;
-        font-size: 50px;
-          transition: transform 0.3s ease;
-  -webkit-transition: transform 0.3s ease;
-  -moz-transition: transform 0.3s ease;
-  -ms-transition: transform 0.3s ease;
-  -o-transition: transform 0.3s ease;
-}
-.about-section h2:hover{
-    transform: translateY(-3px);
-  -webkit-transform: translateY(-3px);
-  -moz-transform: translateY(-3px);
-  -ms-transform: translateY(-3px);
-  -o-transform: translateY(-3px);
-}
 .vedio-story {
 padding: 80px 0px;
-  background:#fff;
 position: relative;
 overflow: hidden;
 margin-bottom: 70px;
 line-height: 1.8;
+
 }
 .vedio-container video{
   max-width: 100%;
@@ -748,15 +735,31 @@ line-height: 1.8;
   position: relative;
   padding: 40px;
   border: 3px solid rgb(82, 72, 54);
+  background: linear-gradient(135deg, #f7f1ec, #665240);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
 }
-.vedio-text{
-  transform: color 0.3s ease;
-  -webkit-transform: color 0.3s ease;
-  -moz-transform: color 0.3s ease;
-  -ms-transform: color 0.3s ease;
-  -o-transform: color 0.3s ease;
+.about-footer a
+{
+  color: black !important;
 }
-.vedio-text:hover{
-color:  rgb(127, 108, 71);
- 
+.about-footer a:hover
+{
+  color:white !important;
+}
+.about-footer h5:hover
+{
+  color: black !important;
+}
+.about-footer h4:hover
+{
+  color: black !important;
+}
+
+.about-footer ul li a{
+  background-color: #dfd1c4 !important;
+
+}
+.about-footer ul li a:hover
+{
+  color: black !important;
 }
