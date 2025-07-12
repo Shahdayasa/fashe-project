@@ -8,7 +8,19 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/styles.css">
 <link rel="stylesheet" href="../assets/css/media.css">
-
+<style>
+  .notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #ecb8b0;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 5px;
+  display: none;
+  z-index: 99999;
+}
+</style>
 </head>
 <body>
 
@@ -86,21 +98,8 @@ Shopping Cart
     </div>
   </div>
 </div>
-<div id="notification" style="
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #28a745;
-  color: white;
-  padding: 12px 20px;
-  border-radius: 5px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  z-index: 9999;
-  font-weight: bold;
-">
-  <span id="notification-text">Added successfully!</span>
-</div>
+<div id="cart-notification" style="display: none; position: fixed; top: 20px; z-index: 9999 ;padding:10px 20px; color:#fff; background: #4caf50;"></div>
+<div class="notification" id="notification">Added to cart successfully!</div>
 
 </div>
     <footer class="get-in-touch py-5">
@@ -147,5 +146,8 @@ Shopping Cart
 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
   <script src="../assets/script.js"></script>
-  </body>
+  
+  <div class="notification" id="cart-notification">Added To Cart Successfully!</div>
+
+</body>
   </html>

@@ -1,23 +1,12 @@
-function showNotification(message, type = 'success', redirect = false) {
-    const notification = document.getElementById('notification');
-    const text = document.getElementById('notification-text');
-if (type === 'success') {
-        notification.style.backgroundColor = '#28a745'; 
-    } else if (type === 'danger') {
-        notification.style.backgroundColor = '#dc3545'; 
-    } else {
-        notification.style.backgroundColor = '#6c757d'; 
-    }
-
-    text.textContent = message;
+function showCartNotification(message) {
+  const notification = document.getElementById('cart-notification');
+  if (notification) {
+    notification.textContent = message;
     notification.style.display = 'block';
-
     setTimeout(() => {
-        notification.style.display = 'none';
-        if (redirect) {
-            window.location.href = '../index.html';
-        }
+      notification.style.display = 'none';
     }, 2000);
+  }
 }
 function updateCartIcon(){
 const cart=JSON.parse(localStorage.getItem('cart')) || [];
@@ -84,7 +73,7 @@ document.addEventListener('DOMContentLoaded',() => {
                 localStorage.setItem('cart', JSON.stringify(cart));
                 updateCartIcon();
         
-            showNotification('Added to cart successfully!');
+                    showCartNotification('Added to cart successfully!');
                 
             });
         });
@@ -119,7 +108,7 @@ updateCartIcon();
 loadCart();
 updateCartIcon();
  
-        showNotification('Removed from cart successfully!', 'danger');
+showCartNotification('Removed from cart successfully!');
                
 }
 
