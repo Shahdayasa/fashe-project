@@ -1,5 +1,5 @@
 function showCartNotification(message) {
-  const notification = document.getElementById('cart-notification');
+  const notification = document.getElementById('notification');
   if (notification) {
     notification.textContent = message;
     notification.style.display = 'block';
@@ -56,6 +56,7 @@ cartContainer.innerHTML += `
 totalElements.textContent=totalItems;
 totalPrices.textContent=totalPrice.toFixed(2);
 }
+
 document.addEventListener('DOMContentLoaded',() => {
     const addToCartButtons=document.querySelectorAll('.add-to-cart');
         addToCartButtons.forEach(button=>{
