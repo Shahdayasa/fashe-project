@@ -767,3 +767,15 @@ line-height: 1.8;
 {
   color: black !important;
 }
+
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #ecb8b0;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 5px;
+  display: none;
+  z-index: 99999;
+}
